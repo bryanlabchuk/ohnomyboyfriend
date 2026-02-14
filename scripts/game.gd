@@ -99,7 +99,7 @@ func _release_dice_from_cup() -> void:
 	_dice_in_cup.clear()
 
 
-func _on_dice_settled(d: Dice, value: int) -> void:
+func _on_dice_settled(_d: Dice, value: int) -> void:
 	_pending_research += value
 	_update_ui()
 
