@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://bgame001"]
+[gd_scene load_steps=10 format=3 uid="uid://bgame001"]
 
 [ext_resource type="Script" path="res://scripts/game.gd" id="1_game"]
 [ext_resource type="PackedScene" uid="uid://btray001" path="res://scenes/props/tray.tscn" id="2_tray"]
@@ -14,14 +14,17 @@ ground_horizon_color = Color(0.45, 0.4, 0.35)
 sky_material = SubResource("ProceduralSkyMaterial1")
 
 [sub_resource type="Environment" id="Environment1"]
-background_mode = 2
-sky = SubResource("Sky1")
+background_mode = 3
+background_color = Color(0.3, 0.5, 0.85)
 ambient_light_source = 2
-ambient_light_color = Color(0.6, 0.6, 0.65)
-tonemap_mode = 2
+ambient_light_color = Color(0.7, 0.7, 0.75)
+tonemap_mode = 0
 
 [sub_resource type="WorldEnvironment" id="WorldEnvironment1"]
 environment = SubResource("Environment1")
+
+[sub_resource type="StandardMaterial3D" id="FloorMat"]
+albedo_color = Color(0.55, 0.35, 0.2, 1)
 
 [node name="Game" type="Node3D"]
 script = ExtResource("1_game")
@@ -30,6 +33,7 @@ script = ExtResource("1_game")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.03, 0)
 use_collision = false
 size = Vector3(2, 0.02, 2)
+material = SubResource("FloorMat")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("WorldEnvironment1")
@@ -41,6 +45,7 @@ light_energy = 1.2
 shadow_enabled = true
 
 [node name="Camera3D" type="Camera3D" parent="."]
+current = true
 transform = Transform3D(0.866, -0.25, 0.433, 0, 0.866, -0.5, -0.5, 0.433, 0.75, 0, 0.28, 0.45)
 fov = 60.0
 

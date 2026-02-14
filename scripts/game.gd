@@ -1,6 +1,7 @@
 extends Node3D
 ## Main game: roll dice (earn research), buy tubes, open tubes (dice + characters spill).
 
+@onready var _camera: Camera3D = $Camera3D
 @onready var tray: Tray = $Tray
 @onready var dice_cup: DiceCup = $DiceCup
 @onready var dice_container: Node3D = $DiceContainer
@@ -27,6 +28,8 @@ var _shop_tube_buttons: Array[Button] = []
 
 
 func _ready() -> void:
+	if _camera:
+		_camera.current = true
 	if dice_scene == null:
 		dice_scene = preload("res://scenes/dice/dice.tscn")
 	if voxel_character_scene == null:

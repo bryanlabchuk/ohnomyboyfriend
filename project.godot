@@ -24,7 +24,9 @@ config/icon="res://icon.svg"
 
 window/size/viewport_width=1280
 window/size/viewport_height=720
-window/size/mode=2
+window/size/mode=0
+window/stretch/mode="canvas_items"
+window/stretch/aspect="expand"
 
 [autoload]
 
@@ -35,6 +37,4 @@ GameState="*res://scripts/game_state.gd"
 3d/physics_engine="Godot Physics 3D"
 
 [rendering]
-
-renderer/rendering_method="gl_compatibility"
 rendering_device/driver.windows="d3d12"
