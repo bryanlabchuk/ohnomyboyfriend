@@ -15,10 +15,16 @@ compatibility/default_parent_skeleton_in_mesh_instance_3d=true
 [application]
 
 config/name="Oh no! My Boyfriend is Haunted"
-run/main_scene="uid://bboot001"
-config/features=PackedStringArray("4.6", "Forward Plus")
-config/icon="res://icon.svg"
 config/run/main_scene="res://scenes/main/game.tscn"
+config/features=PackedStringArray("4.6", "Forward Plus")
+
+config/icon="res://icon.svg"
+
+[display]
+
+window/size/viewport_width=1280
+window/size/viewport_height=720
+window/size/mode=2
 
 [autoload]
 
@@ -30,4 +36,5 @@ GameState="*res://scripts/game_state.gd"
 
 [rendering]
 
+renderer/rendering_method="gl_compatibility"
 rendering_device/driver.windows="d3d12"
