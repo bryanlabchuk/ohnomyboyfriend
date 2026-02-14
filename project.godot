@@ -11,10 +11,9 @@ config_version=5
 [application]
 
 config/name="Oh no! My Boyfriend is Haunted"
-run/main_scene="uid://bgame001"
-config/features=PackedStringArray("4.6", "Forward Plus")
-config/icon="res://icon.svg"
 config/run/main_scene="res://scenes/main/game.tscn"
+config/features=PackedStringArray("4.2", "Forward Plus")
+config/icon="res://icon.svg"
 
 [autoload]
 

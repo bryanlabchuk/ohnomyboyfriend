@@ -32,11 +32,16 @@ func _ready() -> void:
 	if voxel_character_scene == null:
 		voxel_character_scene = preload("res://scenes/characters/voxel_character.tscn")
 
-	dice_cup.pour_started.connect(_on_pour_started)
-	roll_button.pressed.connect(_on_roll_pressed)
-	tube_shop_btn.pressed.connect(_open_shop)
-	open_tube_btn.pressed.connect(_open_selected_tube)
-	shop_close_btn.pressed.connect(_close_shop)
+	if dice_cup:
+		dice_cup.pour_started.connect(_on_pour_started)
+	if roll_button:
+		roll_button.pressed.connect(_on_roll_pressed)
+	if tube_shop_btn:
+		tube_shop_btn.pressed.connect(_open_shop)
+	if open_tube_btn:
+		open_tube_btn.pressed.connect(_open_selected_tube)
+	if shop_close_btn:
+		shop_close_btn.pressed.connect(_close_shop)
 	if reset_button:
 		reset_button.pressed.connect(_reset_roll)
 
@@ -47,6 +52,8 @@ func _ready() -> void:
 
 
 func _on_roll_pressed() -> void:
+	if not dice_cup:
+		return
 	dice_cup.start_pour(1.0)
 	await get_tree().create_timer(0.3).timeout
 	_release_dice_from_cup()
@@ -61,6 +68,8 @@ func _on_pour_started() -> void:
 
 func _spawn_dice_in_cup() -> void:
 	_clear_dice()
+	if not dice_cup or not dice_container or not dice_scene:
+		return
 	for i in default_dice_count:
 		var die: Dice = dice_scene.instantiate() as Dice
 		if die == null:
@@ -149,7 +158,8 @@ func _input(event: InputEvent) -> void:
 func _reset_roll() -> void:
 	_apply_pending_research()
 	_clear_dice()
-	dice_cup.reset()
+	if dice_cup:
+		dice_cup.reset()
 	_spawn_dice_in_cup()
 	_update_ui()
 
