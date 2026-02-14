@@ -17,8 +17,8 @@ extends Node3D
 
 @export var dice_scene: PackedScene
 @export var voxel_character_scene: PackedScene
-@export var default_dice_count: int = 5
-@export var dice_types: Array[int] = [6, 6, 6, 8, 20]
+@export var default_dice_count: int = 3
+@export var dice_types: Array[int] = [6, 6, 6]  # Start with D6 only for stability
 
 var _dice: Array[Dice] = []
 var _dice_in_cup: Array[Dice] = []
@@ -45,7 +45,8 @@ func _ready() -> void:
 	if reset_button:
 		reset_button.pressed.connect(_reset_roll)
 
-	_spawn_dice_in_cup()
+	# Defer dice spawn so physics/scene is fully ready
+	call_deferred("_spawn_dice_in_cup")
 	_update_ui()
 	if shop_panel:
 		shop_panel.visible = false

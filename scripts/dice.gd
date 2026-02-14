@@ -49,10 +49,11 @@ func _setup_dice() -> void:
 
 	add_child(mesh_instance)
 
-	# Create convex collision from mesh
+	# Use BoxShape3D for stable physics (convex from complex meshes can crash)
 	collision_shape = CollisionShape3D.new()
-	var shape := mesh.create_convex_shape()
-	collision_shape.shape = shape
+	var box := BoxShape3D.new()
+	box.size = Vector3(dice_size * 2.2, dice_size * 2.2, dice_size * 2.2)
+	collision_shape.shape = box
 	add_child(collision_shape)
 
 	# Physics defaults for dice rolling
@@ -67,8 +68,6 @@ func _refresh_mesh() -> void:
 	if mesh_instance and mesh_instance.mesh:
 		var mesh := DiceMeshGenerator.create_dice_mesh(dice_type, dice_size)
 		mesh_instance.mesh = mesh
-		if collision_shape and collision_shape.shape:
-			collision_shape.shape = mesh.create_convex_shape()
 
 
 ## Apply a random spin and toss force for rolling

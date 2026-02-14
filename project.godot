@@ -8,6 +8,10 @@
 
 config_version=5
 
+[animation]
+
+compatibility/default_parent_skeleton_in_mesh_instance_3d=true
+
 [application]
 
 config/name="Oh no! My Boyfriend is Haunted"
@@ -21,7 +25,7 @@ GameState="*res://scripts/game_state.gd"
 
 [physics]
 
-3d/physics_engine="Jolt Physics"
+3d/physics_engine="Godot Physics 3D"
 
 [rendering]
 

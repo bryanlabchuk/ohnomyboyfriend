@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://bboot001"]
+
+[ext_resource type="Script" path="res://scripts/boot.gd" id="1_boot"]
+[ext_resource type="PackedScene" uid="uid://bgame001" path="res://scenes/main/game.tscn" id="2_game"]
+
+[node name="Boot" type="Node"]
+script = ExtResource("1_boot")
+
+[node name="Game" parent="." instance=ExtResource("2_game")]
