@@ -1,0 +1,25 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://c0qv5oqj4vrah"
+path="res://.godot/imported/TeenBoy01_voxel.obj-7b40f0af360a082e383103b214274405.mesh"
+
+[deps]
+
+files=["res://.godot/imported/TeenBoy01_voxel.obj-7b40f0af360a082e383103b214274405.mesh"]
+
+source_file="res://assets/voxels/townsfolk/TeenBoy01_voxel.obj"
+dest_files=["res://.godot/imported/TeenBoy01_voxel.obj-7b40f0af360a082e383103b214274405.mesh", "res://.godot/imported/TeenBoy01_voxel.obj-7b40f0af360a082e383103b214274405.mesh"]
+
+[params]
+
+generate_tangents=true
+generate_lods=true
+generate_shadow_mesh=true
+generate_lightmap_uv2=false
+generate_lightmap_uv2_texel_size=0.2
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+force_disable_mesh_compression=false

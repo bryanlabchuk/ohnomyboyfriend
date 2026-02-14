@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://bvoxchar001"]
+
+[ext_resource type="Script" path="res://scripts/voxel_character.gd" id="1_voxel"]
+
+[node name="VoxelCharacter" type="Node3D"]
+script = ExtResource("1_voxel")
+mesh_scale = 0.01

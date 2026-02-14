@@ -1,0 +1,167 @@
+{
+  "version": 1,
+  "depth": 10,
+  "characters": {
+    "AdultMan01": {
+      "mesh": "assets/voxels/townsfolk/AdultMan01_voxel.obj",
+      "source": "assets/townsfolk/AdultMan01.png",
+      "voxel_count": 12190
+    },
+    "AdultMan05": {
+      "mesh": "assets/voxels/townsfolk/AdultMan05_voxel.obj",
+      "source": "assets/townsfolk/AdultMan05.png",
+      "voxel_count": 9400
+    },
+    "AdultMan06": {
+      "mesh": "assets/voxels/townsfolk/AdultMan06_voxel.obj",
+      "source": "assets/townsfolk/AdultMan06.png",
+      "voxel_count": 11220
+    },
+    "AdultMan07": {
+      "mesh": "assets/voxels/townsfolk/AdultMan07_voxel.obj",
+      "source": "assets/townsfolk/AdultMan07.png",
+      "voxel_count": 10690
+    },
+    "AdultMan08": {
+      "mesh": "assets/voxels/townsfolk/AdultMan08_voxel.obj",
+      "source": "assets/townsfolk/AdultMan08.png",
+      "voxel_count": 9270
+    },
+    "AdultWoman01": {
+      "mesh": "assets/voxels/townsfolk/AdultWoman01_voxel.obj",
+      "source": "assets/townsfolk/AdultWoman01.png",
+      "voxel_count": 11960
+    },
+    "AdultWoman05": {
+      "mesh": "assets/voxels/townsfolk/AdultWoman05_voxel.obj",
+      "source": "assets/townsfolk/AdultWoman05.png",
+      "voxel_count": 8000
+    },
+    "AdultWoman06": {
+      "mesh": "assets/voxels/townsfolk/AdultWoman06_voxel.obj",
+      "source": "assets/townsfolk/AdultWoman06.png",
+      "voxel_count": 13150
+    },
+    "AdultWomen04": {
+      "mesh": "assets/voxels/townsfolk/AdultWomen04_voxel.obj",
+      "source": "assets/townsfolk/AdultWomen04.png",
+      "voxel_count": 10260
+    },
+    "Adultman04": {
+      "mesh": "assets/voxels/townsfolk/Adultman04_voxel.obj",
+      "source": "assets/townsfolk/Adultman04.png",
+      "voxel_count": 12880
+    },
+    "Businesswoman": {
+      "mesh": "assets/voxels/townsfolk/Businesswoman_voxel.obj",
+      "source": "assets/townsfolk/Businesswoman.png",
+      "voxel_count": 8750
+    },
+    "Cook": {
+      "mesh": "assets/voxels/townsfolk/Cook_voxel.obj",
+      "source": "assets/townsfolk/Cook.png",
+      "voxel_count": 10550
+    },
+    "EmoTeenGirl": {
+      "mesh": "assets/voxels/townsfolk/EmoTeenGirl_voxel.obj",
+      "source": "assets/townsfolk/EmoTeenGirl.png",
+      "voxel_count": 7460
+    },
+    "HistoryTeacher": {
+      "mesh": "assets/voxels/townsfolk/HistoryTeacher_voxel.obj",
+      "source": "assets/townsfolk/HistoryTeacher.png",
+      "voxel_count": 9120
+    },
+    "Old_lady": {
+      "mesh": "assets/voxels/townsfolk/Old_lady_voxel.obj",
+      "source": "assets/townsfolk/Old lady.png",
+      "voxel_count": 11390
+    },
+    "OldMan": {
+      "mesh": "assets/voxels/townsfolk/OldMan_voxel.obj",
+      "source": "assets/townsfolk/OldMan.png",
+      "voxel_count": 10290
+    },
+    "OldWoman02": {
+      "mesh": "assets/voxels/townsfolk/OldWoman02_voxel.obj",
+      "source": "assets/townsfolk/OldWoman02.png",
+      "voxel_count": 9120
+    },
+    "Scientist": {
+      "mesh": "assets/voxels/townsfolk/Scientist_voxel.obj",
+      "source": "assets/townsfolk/Scientist.png",
+      "voxel_count": 10610
+    },
+    "StonerTeenBoy": {
+      "mesh": "assets/voxels/townsfolk/StonerTeenBoy_voxel.obj",
+      "source": "assets/townsfolk/StonerTeenBoy.png",
+      "voxel_count": 10510
+    },
+    "TeenBoy01": {
+      "mesh": "assets/voxels/townsfolk/TeenBoy01_voxel.obj",
+      "source": "assets/townsfolk/TeenBoy01.png",
+      "voxel_count": 7180
+    },
+    "TeenBoy02": {
+      "mesh": "assets/voxels/townsfolk/TeenBoy02_voxel.obj",
+      "source": "assets/townsfolk/TeenBoy02.png",
+      "voxel_count": 8440
+    },
+    "TeenBoy03": {
+      "mesh": "assets/voxels/townsfolk/TeenBoy03_voxel.obj",
+      "source": "assets/townsfolk/TeenBoy03.png",
+      "voxel_count": 8890
+    },
+    "TeenGirl01": {
+      "mesh": "assets/voxels/townsfolk/TeenGirl01_voxel.obj",
+      "source": "assets/townsfolk/TeenGirl01.png",
+      "voxel_count": 7980
+    },
+    "TeenGirl02": {
+      "mesh": "assets/voxels/townsfolk/TeenGirl02_voxel.obj",
+      "source": "assets/townsfolk/TeenGirl02.png",
+      "voxel_count": 7950
+    },
+    "TeenGirl03": {
+      "mesh": "assets/voxels/townsfolk/TeenGirl03_voxel.obj",
+      "source": "assets/townsfolk/TeenGirl03.png",
+      "voxel_count": 7760
+    },
+    "Waitress": {
+      "mesh": "assets/voxels/townsfolk/Waitress_voxel.obj",
+      "source": "assets/townsfolk/Waitress.png",
+      "voxel_count": 10100
+    },
+    "CatBlack": {
+      "mesh": "assets/voxels/misc/CatBlack_voxel.obj",
+      "source": "assets/misc/CatBlack.png",
+      "voxel_count": 3150
+    },
+    "CatWhite": {
+      "mesh": "assets/voxels/misc/CatWhite_voxel.obj",
+      "source": "assets/misc/CatWhite.png",
+      "voxel_count": 3440
+    },
+    "Dog": {
+      "mesh": "assets/voxels/misc/Dog_voxel.obj",
+      "source": "assets/misc/Dog.png",
+      "voxel_count": 4480
+    },
+    "Ghost_costume": {
+      "mesh": "assets/voxels/misc/Ghost_costume_voxel.obj",
+      "source": "assets/misc/Ghost costume.png",
+      "voxel_count": 10350
+    },
+    "Horse_costume": {
+      "mesh": "assets/voxels/misc/Horse_costume_voxel.obj",
+      "source": "assets/misc/Horse costume.png",
+      "voxel_count": 18750
+    },
+    "ScifiHero": {
+      "mesh": "assets/voxels/misc/ScifiHero_voxel.obj",
+      "source": "assets/misc/ScifiHero.png",
+      "voxel_count": 10440
+    }
+  },
+  "description": "Voxel characters converted from 2D pixel art, 10 pixels deep"
+}

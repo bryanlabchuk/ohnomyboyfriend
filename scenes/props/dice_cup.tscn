@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://bcup001"]
+
+[ext_resource type="Script" path="res://scripts/dice_cup.gd" id="1_cup"]
+
+[node name="DiceCup" type="Node3D"]
+script = ExtResource("1_cup")
+cup_radius = 0.06
+cup_height = 0.12

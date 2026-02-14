@@ -1,0 +1,25 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://c20eadsoq3dgq"
+path="res://.godot/imported/AdultMan01_voxel.obj-55f447a182278c77edd1f4a6fba88bdc.mesh"
+
+[deps]
+
+files=["res://.godot/imported/AdultMan01_voxel.obj-55f447a182278c77edd1f4a6fba88bdc.mesh"]
+
+source_file="res://assets/voxels/townsfolk/AdultMan01_voxel.obj"
+dest_files=["res://.godot/imported/AdultMan01_voxel.obj-55f447a182278c77edd1f4a6fba88bdc.mesh", "res://.godot/imported/AdultMan01_voxel.obj-55f447a182278c77edd1f4a6fba88bdc.mesh"]
+
+[params]
+
+generate_tangents=true
+generate_lods=true
+generate_shadow_mesh=true
+generate_lightmap_uv2=false
+generate_lightmap_uv2_texel_size=0.2
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+force_disable_mesh_compression=false

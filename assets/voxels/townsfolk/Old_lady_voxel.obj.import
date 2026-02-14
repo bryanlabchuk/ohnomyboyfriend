@@ -1,0 +1,25 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://dam663dyyk3wb"
+path="res://.godot/imported/Old_lady_voxel.obj-5a2a699bcbebc8f870a9cafd2298ae5d.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Old_lady_voxel.obj-5a2a699bcbebc8f870a9cafd2298ae5d.mesh"]
+
+source_file="res://assets/voxels/townsfolk/Old_lady_voxel.obj"
+dest_files=["res://.godot/imported/Old_lady_voxel.obj-5a2a699bcbebc8f870a9cafd2298ae5d.mesh", "res://.godot/imported/Old_lady_voxel.obj-5a2a699bcbebc8f870a9cafd2298ae5d.mesh"]
+
+[params]
+
+generate_tangents=true
+generate_lods=true
+generate_shadow_mesh=true
+generate_lightmap_uv2=false
+generate_lightmap_uv2_texel_size=0.2
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+force_disable_mesh_compression=false
