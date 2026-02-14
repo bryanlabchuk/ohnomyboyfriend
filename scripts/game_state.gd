@@ -73,7 +73,7 @@ func can_buy_tube(rarity: String) -> bool:
 
 
 func buy_tube(rarity: String) -> bool:
-	var cost := TUBE_COSTS.get(rarity, 999)
+	var cost: int = int(TUBE_COSTS.get(rarity, 999))
 	if research < cost:
 		return false
 	research -= cost
@@ -89,7 +89,7 @@ func _generate_tube_contents(rarity: String) -> Array:
 	var num_chars := randi_range(0, 1) if randf() > 0.5 else 0
 	
 	for i in num_dice:
-		var sides := [6, 6, 6, 8, 20][randi() % 5]
+		var sides: int = int([6, 6, 6, 8, 20][randi() % 5])
 		contents.append({"type": "dice", "sides": sides})
 	
 	if num_chars > 0:
