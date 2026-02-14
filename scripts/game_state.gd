@@ -93,9 +93,9 @@ func _generate_tube_contents(rarity: String) -> Array:
 		contents.append({"type": "dice", "sides": sides})
 	
 	if num_chars > 0:
-		var pool := RARITY_CHARACTERS.get(rarity, RARITY_CHARACTERS.common)
+		var pool: Array = RARITY_CHARACTERS.get(rarity, RARITY_CHARACTERS.common)
 		pool = pool + RARITY_CHARACTERS.common if pool.is_empty() else pool
-		var char_id := pool[randi() % pool.size()]
+		var char_id: String = str(pool[randi() % pool.size()])
 		if CHARACTER_VOXELS.has(char_id) and allies.size() < MAX_ALLIES:
 			contents.append({"type": "character", "id": char_id, "name": CHARACTER_NAMES.get(char_id, char_id), "voxel": CHARACTER_VOXELS[char_id]})
 	

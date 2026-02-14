@@ -186,7 +186,7 @@ func _populate_shop() -> void:
 
 	var rarities := ["common", "uncommon", "rare"]
 	for r in rarities:
-		var cost := GameState.TUBE_COSTS.get(r, 99)
+		var cost: int = int(GameState.TUBE_COSTS.get(r, 99))
 		var can_afford := GameState.can_buy_tube(r)
 		var btn := Button.new()
 		btn.text = "%s Tube - %d" % [r.left(1).to_upper() + r.substr(1), cost]
@@ -231,9 +231,9 @@ func _spill_tube_contents(contents: Array) -> void:
 					_dice.append(die)
 					die.dice_settled.connect(_on_dice_settled)
 			elif item.get("type") == "character":
-				var char_id := item.get("id", "")
-				var voxel_path := item.get("voxel", "")
-				var name_str := item.get("name", "Ally")
+				var char_id: String = str(item.get("id", ""))
+				var voxel_path: String = str(item.get("voxel", ""))
+				var name_str: String = str(item.get("name", "Ally"))
 				if GameState.allies.size() < GameState.MAX_ALLIES:
 					GameState.add_ally(char_id, name_str, voxel_path)
 				# Spawn voxel on tray
