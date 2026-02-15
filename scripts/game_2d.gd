@@ -1,20 +1,20 @@
-extends Control
+extends Node3D
 ## Game with 3D viewport - dice roll, cup tilt, tube opening with voxel characters.
 
-@onready var roll_btn: Button = $MainVBox/Margin/VBox/ButtonRow/RollButton
-@onready var research_label: Label = $MainVBox/Margin/VBox/ResearchLabel
-@onready var tube_shop_btn: Button = $MainVBox/Margin/VBox/ButtonRow/TubeShopBtn
-@onready var open_tube_btn: Button = $MainVBox/Margin/VBox/TubeRow/OpenTubeBtn
-@onready var tube_count_label: Label = $MainVBox/Margin/VBox/TubeRow/TubeCountLabel
+@onready var roll_btn: Button = $CanvasLayer/Margin/VBox/ButtonRow/RollButton
+@onready var research_label: Label = $CanvasLayer/Margin/VBox/ResearchLabel
+@onready var tube_shop_btn: Button = $CanvasLayer/Margin/VBox/ButtonRow/TubeShopBtn
+@onready var open_tube_btn: Button = $CanvasLayer/Margin/VBox/TubeRow/OpenTubeBtn
+@onready var tube_count_label: Label = $CanvasLayer/Margin/VBox/TubeRow/TubeCountLabel
 
 var _game_3d: Node3D = null
 
 func _ready() -> void:
 	GameState.research = 20
-	_game_3d = $MainVBox/ViewportContainer/SubViewport/Game3DContent as Node3D
+	_game_3d = $CanvasLayer/Margin/VBox/ViewportContainer/SubViewport/Game3DContent as Node3D
 	if roll_btn:
 		roll_btn.pressed.connect(_on_roll)
-	var reset_btn := $MainVBox/Margin/VBox/ButtonRow/ResetButton as Button
+	var reset_btn := $CanvasLayer/Margin/VBox/ButtonRow/ResetButton as Button
 	if reset_btn:
 		reset_btn.pressed.connect(_on_reset)
 	if tube_shop_btn:
@@ -50,9 +50,9 @@ func _update_ui() -> void:
 		open_tube_btn.disabled = GameState.tubes.is_empty()
 
 func _open_shop() -> void:
-	$MainVBox/Margin.visible = false
+	$CanvasLayer/Margin.visible = false
 	var shop := _make_shop_panel()
-	add_child(shop)
+	$CanvasLayer.add_child(shop)
 
 func _make_shop_panel() -> Control:
 	var overlay := Control.new()
@@ -97,7 +97,7 @@ func _make_shop_panel() -> Control:
 	close_btn.text = "Close"
 	close_btn.pressed.connect(func():
 		overlay.queue_free()
-		$MainVBox/Margin.visible = true
+		$CanvasLayer/Margin.visible = true
 	)
 	vbox.add_child(close_btn)
 	
