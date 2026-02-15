@@ -18,8 +18,8 @@ extends Node3D
 
 @export var dice_scene: PackedScene
 @export var voxel_character_scene: PackedScene
-@export var default_dice_count: int = 3
-@export var dice_types: Array[int] = [6, 6, 6]  # Start with D6 only for stability
+@export var default_dice_count: int = 0  # Start with 0 to avoid crash; Roll adds dice
+@export var dice_types: Array[int] = [6, 6, 6]
 
 var _dice: Array[Dice] = []
 var _dice_in_cup: Array[Dice] = []
@@ -58,6 +58,9 @@ func _ready() -> void:
 func _on_roll_pressed() -> void:
 	if not dice_cup:
 		return
+	# Spawn dice if none (e.g. after starting with 0 to avoid load crash)
+	if _dice.is_empty():
+		_spawn_dice_in_cup()
 	dice_cup.start_pour(1.0)
 	await get_tree().create_timer(0.3).timeout
 	_release_dice_from_cup()
