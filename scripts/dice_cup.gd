@@ -4,7 +4,7 @@ extends Node3D
 
 @export var cup_radius: float = 0.06
 @export var cup_height: float = 0.12
-@export var cup_color: Color = Color(0.2, 0.5, 0.3)  # Felt green
+@export var cup_color: Color = Color(0.35, 0.65, 0.45)  # Bright felt green
 @export var tilt_speed: float = 3.0
 @export var max_tilt: float = 60.0  # degrees
 
@@ -83,8 +83,8 @@ func _setup_cup() -> void:
 	_mesh_instance.mesh = mesh
 	var mat := StandardMaterial3D.new()
 	mat.albedo_color = cup_color
-	mat.roughness = 0.7
-	mat.metallic = 0.1
+	mat.roughness = 0.6
+	mat.metallic = 0.05
 	_mesh_instance.material_override = mat
 	add_child(_mesh_instance)
 

@@ -46,6 +46,12 @@ func _load_voxel_mesh() -> void:
 	_mesh_instance = MeshInstance3D.new()
 	_mesh_instance.mesh = mesh
 	_mesh_instance.scale = Vector3.ONE * mesh_scale
+	# OBJs have no materials - use fallback so voxels are visible under lighting
+	var mat := StandardMaterial3D.new()
+	mat.albedo_color = Color(0.88, 0.84, 0.78, 1)
+	mat.roughness = 0.7
+	mat.metallic = 0.0
+	_mesh_instance.material_override = mat
 	add_child(_mesh_instance)
 
 

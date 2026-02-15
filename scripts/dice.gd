@@ -43,8 +43,8 @@ func _setup_dice() -> void:
 
 	var mat := StandardMaterial3D.new()
 	mat.albedo_color = dice_color
-	mat.roughness = 0.6
-	mat.metallic = 0.2
+	mat.roughness = 0.55
+	mat.metallic = 0.15
 	mesh_instance.material_override = mat
 
 	add_child(mesh_instance)

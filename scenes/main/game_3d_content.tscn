@@ -1,0 +1,55 @@
+[gd_scene load_steps=9 format=3 uid="uid://b3dcontent"]
+
+[ext_resource type="Script" path="res://scripts/game_3d.gd" id="1_script"]
+[ext_resource type="PackedScene" uid="uid://btray001" path="res://scenes/props/tray.tscn" id="2_tray"]
+[ext_resource type="PackedScene" uid="uid://bcup001" path="res://scenes/props/dice_cup.tscn" id="3_cup"]
+
+[sub_resource type="BoxMesh" id="BoxMesh1"]
+size = Vector3(1.5, 0.02, 1.2)
+
+[sub_resource type="StandardMaterial3D" id="FloorMat"]
+albedo_color = Color(0.52, 0.38, 0.25, 1)
+roughness = 0.85
+metallic = 0.0
+
+[sub_resource type="Environment" id="Env1"]
+ambient_light_source = 2
+ambient_light_color = Color(0.85, 0.82, 0.78, 1)
+ambient_light_energy = 1.2
+background_mode = 3
+background_color = Color(0.4, 0.55, 0.75, 1)
+
+[sub_resource type="WorldEnvironment" id="WE1"]
+environment = SubResource("Env1")
+
+[node name="Game3DContent" type="Node3D"]
+script = ExtResource("1_script")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Env1")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.65, -0.4, 0.65, 0, 0.85, 0.53, -0.76, -0.35, 0.55, 0.3, 0.6, 0.2)
+light_energy = 1.8
+shadow_enabled = false
+
+[node name="Camera3D" type="Camera3D" parent="."]
+position = Vector3(0, 0.28, 0.42)
+rotation = Vector3(-0.45, 0, 0)
+current = true
+fov = 52.0
+
+[node name="Tray" parent="." instance=ExtResource("2_tray")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, 0)
+
+[node name="DiceCup" parent="." instance=ExtResource("3_cup")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0.06, 0.05, 0.03)
+
+[node name="DiceContainer" type="Node3D" parent="."]
+
+[node name="ContentContainer" type="Node3D" parent="."]
+
+[node name="Floor" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.025, 0)
+mesh = SubResource("BoxMesh1")
+material_override = SubResource("FloorMat")

@@ -4,7 +4,7 @@ extends StaticBody3D
 
 @export var tray_size: Vector2 = Vector2(0.5, 0.4)
 @export var edge_height: float = 0.02
-@export var tray_color: Color = Color(0.4, 0.25, 0.15)  # Wood-ish
+@export var tray_color: Color = Color(0.55, 0.38, 0.22)  # Warm wood
 
 
 func _ready() -> void:
@@ -39,8 +39,8 @@ func _setup_tray() -> void:
 	surface_tool.generate_normals()
 	var mat := StandardMaterial3D.new()
 	mat.albedo_color = tray_color
-	mat.roughness = 0.8
-	mat.metallic = 0.05
+	mat.roughness = 0.75
+	mat.metallic = 0.02
 	surface_tool.set_material(mat)
 	mesh_instance.mesh = surface_tool.commit()
 	add_child(mesh_instance)

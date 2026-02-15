@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://btube001"]
+
+[ext_resource type="Script" path="res://scripts/tube.gd" id="1_tube"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh1"]
+top_radius = 0.035
+bottom_radius = 0.035
+height = 0.12
+
+[sub_resource type="StandardMaterial3D" id="TubeMat"]
+albedo_color = Color(0.95, 0.97, 1.0, 0.6)
+roughness = 0.25
+metallic = 0.05
+transparency = 1
+
+[node name="Tube" type="Node3D"]
+script = ExtResource("1_tube")
+tube_radius = 0.04
+tube_height = 0.12
+
+[node name="TubeBody" type="MeshInstance3D" parent="."]
+mesh = SubResource("CylinderMesh1")
+surface_material_override/0 = SubResource("TubeMat")

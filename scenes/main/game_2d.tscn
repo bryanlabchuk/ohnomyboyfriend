@@ -1,0 +1,107 @@
+[gd_scene load_steps=3 format=3 uid="uid://bgame2d"]
+
+[ext_resource type="Script" path="res://scripts/game_2d.gd" id="1_script"]
+[ext_resource type="PackedScene" uid="uid://b3dcontent" path="res://scenes/main/game_3d_content.tscn" id="2_3d"]
+
+[node name="Game2D" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_script")
+
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.25, 0.45, 0.7, 1)
+
+[node name="MainVBox" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 0
+
+[node name="ViewportContainer" type="SubViewportContainer" parent="MainVBox"]
+layout_mode = 2
+custom_minimum_size = Vector2(0, 280)
+stretch = true
+
+[node name="SubViewport" type="SubViewport" parent="MainVBox/ViewportContainer"]
+render_target_update_mode = 4
+handle_input_locally = false
+size = Vector2i(720, 280)
+
+[node name="Game3DContent" parent="MainVBox/ViewportContainer/SubViewport" instance=ExtResource("2_3d")]
+
+[node name="Margin" type="MarginContainer" parent="MainVBox"]
+layout_mode = 2
+theme_override_constants/margin_left = 24
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 24
+theme_override_constants/margin_bottom = 24
+
+[node name="VBox" type="VBoxContainer" parent="MainVBox/Margin"]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="Title" type="Label" parent="MainVBox/Margin/VBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.9, 0.2, 0.3, 1)
+theme_override_font_sizes/font_size = 28
+text = "Oh no! My Boyfriend is Haunted"
+horizontal_alignment = 1
+
+[node name="ResearchLabel" type="Label" parent="MainVBox/Margin/VBox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "Research: 20"
+
+[node name="ButtonRow" type="HBoxContainer" parent="MainVBox/Margin/VBox"]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="RollButton" type="Button" parent="MainVBox/Margin/VBox/ButtonRow"]
+layout_mode = 2
+custom_minimum_size = Vector2(120, 44)
+theme_override_font_sizes/font_size = 18
+text = "Roll Dice"
+
+[node name="ResetButton" type="Button" parent="MainVBox/Margin/VBox/ButtonRow"]
+layout_mode = 2
+custom_minimum_size = Vector2(80, 44)
+text = "Reset"
+
+[node name="TubeShopBtn" type="Button" parent="MainVBox/Margin/VBox/ButtonRow"]
+layout_mode = 2
+custom_minimum_size = Vector2(120, 44)
+text = "Tube Shop"
+
+[node name="TubeRow" type="HBoxContainer" parent="MainVBox/Margin/VBox"]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="TubeCountLabel" type="Label" parent="MainVBox/Margin/VBox/TubeRow"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 16
+text = "Tubes: 0 | Allies: 0"
+
+[node name="OpenTubeBtn" type="Button" parent="MainVBox/Margin/VBox/TubeRow"]
+layout_mode = 2
+custom_minimum_size = Vector2(110, 40)
+text = "Open Tube"
+disabled = true
+
+[node name="Hint" type="Label" parent="MainVBox/Margin/VBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.5, 0.5, 0.5, 1)
+theme_override_font_sizes/font_size = 13
+text = "Roll Dice -> earn Research -> Tube Shop -> Open Tube"
