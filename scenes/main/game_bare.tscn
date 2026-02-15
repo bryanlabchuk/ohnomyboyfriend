@@ -1,0 +1,165 @@
+[gd_scene load_steps=6 format=3 uid="uid://bbare1"]
+
+[ext_resource type="Script" path="res://scripts/game_bare.gd" id="1_script"]
+[ext_resource type="PackedScene" uid="uid://btray001" path="res://scenes/props/tray.tscn" id="2_tray"]
+[ext_resource type="PackedScene" uid="uid://bcup001" path="res://scenes/props/dice_cup.tscn" id="3_cup"]
+
+[sub_resource type="BoxMesh" id="BoxMesh1"]
+size = Vector3(2, 0.02, 2)
+
+[sub_resource type="StandardMaterial3D" id="FloorMat"]
+albedo_color = Color(0.5, 0.35, 0.2, 1)
+
+[node name="GameBare" type="Node3D"]
+script = ExtResource("1_script")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+position = Vector3(0, 0.35, 0.5)
+rotation = Vector3(-0.45, 0, 0)
+current = true
+fov = 50.0
+
+[node name="Tray" parent="." instance=ExtResource("2_tray")]
+
+[node name="DiceCup" parent="." instance=ExtResource("3_cup")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.1, 0.08, 0.05)
+
+[node name="DiceContainer" type="Node3D" parent="."]
+
+[node name="ContentContainer" type="Node3D" parent="."]
+
+[node name="Floor" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.02, 0)
+mesh = SubResource("BoxMesh1")
+material_override = SubResource("FloorMat")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Margin" type="MarginContainer" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="VBox" type="VBoxContainer" parent="CanvasLayer/Margin"]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="Title" type="Label" parent="CanvasLayer/Margin/VBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.9, 0.2, 0.3, 1)
+theme_override_font_sizes/font_size = 26
+text = "Oh no! My Boyfriend is Haunted"
+horizontal_alignment = 1
+
+[node name="ResearchLabel" type="Label" parent="CanvasLayer/Margin/VBox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "Research: 20"
+
+[node name="ButtonRow" type="HBoxContainer" parent="CanvasLayer/Margin/VBox"]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="RollButton" type="Button" parent="CanvasLayer/Margin/VBox/ButtonRow"]
+layout_mode = 2
+custom_minimum_size = Vector2(120, 40)
+theme_override_font_sizes/font_size = 18
+text = "Roll Dice"
+
+[node name="ResetButton" type="Button" parent="CanvasLayer/Margin/VBox/ButtonRow"]
+layout_mode = 2
+custom_minimum_size = Vector2(80, 40)
+text = "Reset"
+
+[node name="TubeShopBtn" type="Button" parent="CanvasLayer/Margin/VBox/ButtonRow"]
+layout_mode = 2
+custom_minimum_size = Vector2(120, 40)
+text = "Tube Shop"
+
+[node name="Hint" type="Label" parent="CanvasLayer/Margin/VBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.5, 0.5, 0.5, 1)
+theme_override_font_sizes/font_size = 12
+text = "Roll Dice -> earn Research -> Tube Shop -> Open Tube"
+
+[node name="TubeRow" type="HBoxContainer" parent="CanvasLayer/Margin/VBox"]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="TubeCountLabel" type="Label" parent="CanvasLayer/Margin/VBox/TubeRow"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 14
+text = "Tubes: 0 | Allies: 0"
+
+[node name="OpenTubeBtn" type="Button" parent="CanvasLayer/Margin/VBox/TubeRow"]
+layout_mode = 2
+custom_minimum_size = Vector2(100, 36)
+text = "Open Tube"
+disabled = true
+
+[node name="ShopPanel" type="Control" parent="CanvasLayer"]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Backdrop" type="ColorRect" parent="CanvasLayer/ShopPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.6)
+
+[node name="Center" type="CenterContainer" parent="CanvasLayer/ShopPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ShopBox" type="PanelContainer" parent="CanvasLayer/ShopPanel/Center"]
+layout_mode = 2
+custom_minimum_size = Vector2(320, 280)
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/ShopPanel/Center/ShopBox"]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="VBox" type="VBoxContainer" parent="CanvasLayer/ShopPanel/Center/ShopBox/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="ShopTitle" type="Label" parent="CanvasLayer/ShopPanel/Center/ShopBox/MarginContainer/VBox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Tube Shop"
+
+[node name="ShopSubtitle" type="Label" parent="CanvasLayer/ShopPanel/Center/ShopBox/MarginContainer/VBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.7, 0.7, 0.7, 1)
+text = "Buy tubes with Research. Open them to get dice and allies!"
+
+[node name="TubesGrid" type="GridContainer" parent="CanvasLayer/ShopPanel/Center/ShopBox/MarginContainer/VBox"]
+layout_mode = 2
+columns = 1
+
+[node name="CloseBtn" type="Button" parent="CanvasLayer/ShopPanel/Center/ShopBox/MarginContainer/VBox"]
+layout_mode = 2
+text = "Close"
