@@ -45,6 +45,8 @@ func _setup_dice() -> void:
 	mat.albedo_color = dice_color
 	mat.roughness = 0.55
 	mat.metallic = 0.15
+	mat.emission_enabled = true
+	mat.emission = dice_color * 0.35
 	mesh_instance.material_override = mat
 
 	add_child(mesh_instance)

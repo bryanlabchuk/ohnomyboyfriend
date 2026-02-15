@@ -41,6 +41,8 @@ func _setup_tray() -> void:
 	mat.albedo_color = tray_color
 	mat.roughness = 0.75
 	mat.metallic = 0.02
+	mat.emission_enabled = true
+	mat.emission = tray_color * 0.3
 	surface_tool.set_material(mat)
 	mesh_instance.mesh = surface_tool.commit()
 	add_child(mesh_instance)

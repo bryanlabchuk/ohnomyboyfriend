@@ -5,6 +5,7 @@ extends Node3D
 @onready var dice_cup: DiceCup = $DiceCup
 @onready var dice_container: Node3D = $DiceContainer
 @onready var content_container: Node3D = $ContentContainer
+@onready var camera: Camera3D = $Camera3D
 
 var _dice: Array[Dice] = []
 var _dice_in_cup: Array[Dice] = []
@@ -13,6 +14,8 @@ var _voxel_scene: PackedScene
 var _tube_scene: PackedScene
 
 func _ready() -> void:
+	if camera:
+		camera.make_current()
 	_dice_scene = preload("res://scenes/dice/dice.tscn")
 	_voxel_scene = preload("res://scenes/characters/voxel_character.tscn")
 	_tube_scene = preload("res://scenes/props/tube.tscn")

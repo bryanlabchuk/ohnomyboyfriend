@@ -85,6 +85,8 @@ func _setup_cup() -> void:
 	mat.albedo_color = cup_color
 	mat.roughness = 0.6
 	mat.metallic = 0.05
+	mat.emission_enabled = true
+	mat.emission = cup_color * 0.4
 	_mesh_instance.material_override = mat
 	add_child(_mesh_instance)
 
