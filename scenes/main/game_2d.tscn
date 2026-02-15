@@ -28,11 +28,12 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/separation = 0
+theme_override_constants/separation = 12
 
 [node name="ViewportContainer" type="SubViewportContainer" parent="MainVBox"]
 layout_mode = 2
 custom_minimum_size = Vector2(0, 280)
+size_flags_vertical = 3
 stretch = true
 
 [node name="SubViewport" type="SubViewport" parent="MainVBox/ViewportContainer"]
@@ -44,6 +45,7 @@ size = Vector2i(720, 280)
 
 [node name="Margin" type="MarginContainer" parent="MainVBox"]
 layout_mode = 2
+size_flags_vertical = 3
 theme_override_constants/margin_left = 24
 theme_override_constants/margin_top = 16
 theme_override_constants/margin_right = 24
